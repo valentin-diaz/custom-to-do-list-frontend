@@ -25,8 +25,8 @@ function DailyTasks() {
     
     return ( 
         <>
-        <h1>Tareas para hoy</h1>
-        <TaskList tasks={tasks} />
+            <h1>Tareas para hoy</h1>
+            <TaskList tasks={tasks} />
         </>
      );
 }
