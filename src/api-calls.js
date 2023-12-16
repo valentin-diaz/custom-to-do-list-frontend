@@ -35,3 +35,20 @@ export const putTaskComplete = async (task_id) => {
         }
     }
 }
+
+export const putTaskUncomplete = async (task_id) => {
+    console.log('PUT TASK COMPLETE')
+    try {
+        const response = await axios.put(`${BASE_URL}/tasks/${task_id}/uncomplete`);
+
+        return {
+            data: response,
+            error: null
+        }
+    } catch (error) {
+        return {
+            data: null,
+            error
+        }
+    }
+}

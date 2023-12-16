@@ -1,8 +1,8 @@
-function CompletedTaskItem({ task }) {
+function CompletedTaskItem({ task, uncompleteTask }) {
     return ( 
         <li>
             <p>{task.title}</p>
-            <button>Des-completar</button>
+            <button onClick={() => uncompleteTask(task)}>Des-completar</button>
         </li>
      );
 }

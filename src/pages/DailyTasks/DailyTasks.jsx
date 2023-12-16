@@ -5,6 +5,7 @@ import "./DailyTasks.css";
 
 function DailyTasks() {
     const [tasks, setTasks] = useState([]);
+    const [reload, setReload] = useState(0);
 
     useEffect(() => {
         const callGetTasks = async () => {
@@ -21,12 +22,12 @@ function DailyTasks() {
         }
 
         callGetTasks();
-    }, []);
+    }, [reload]);
     
     return ( 
         <>
             <h1>Tareas para hoy</h1>
-            <TaskList tasks={tasks} />
+            <TaskList tasks={tasks} setReload={setReload} />
         </>
      );
 }
