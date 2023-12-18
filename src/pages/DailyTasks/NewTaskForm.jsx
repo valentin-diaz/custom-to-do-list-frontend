@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { postTask } from "../../api-calls";
 
-function NewTaskForm() {
+function NewTaskForm({ setReload }) {
     const [taskData, setTaskData] = useState({
         title: '',
         category: 'Leer'
@@ -15,6 +15,7 @@ function NewTaskForm() {
 
         if (data) {
             console.log('Tarea creada')
+            setReload(prev => prev + 1)
         }
 
         if (error) {

@@ -29,7 +29,7 @@ function DailyTasks() {
         <>
             <h1>Tareas para hoy</h1>
             <TaskList tasks={tasks} setReload={setReload} />
-            <NewTaskForm />
+            <NewTaskForm setReload={setReload}/>
         </>
      );
 }
