@@ -26,11 +26,11 @@ function DailyTasks() {
     }, [reload]);
     
     return ( 
-        <>
+        <div className="daily-tasks-wrapper">
             <h1>Tareas para hoy</h1>
             <TaskList tasks={tasks} setReload={setReload} />
             <NewTaskForm setReload={setReload}/>
-        </>
+        </div>
      );
 }
 

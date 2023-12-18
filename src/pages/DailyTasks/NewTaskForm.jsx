@@ -15,6 +15,7 @@ function NewTaskForm({ setReload }) {
 
         if (data) {
             console.log('Tarea creada')
+            setTaskData({ title: '', category: 'Leer' })
             setReload(prev => prev + 1)
         }
 

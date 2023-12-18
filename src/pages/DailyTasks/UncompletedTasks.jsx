@@ -1,10 +1,7 @@
-import { useNavigate } from "react-router-dom";
 import { putTaskComplete } from "../../api-calls";
 import UncompletedTaskItem from "./UncompletedTaskItem";
 
 function UncompletedTasks({ tasks, setReload }) {
-    const navigate = useNavigate();
-    
     const markAsComplete = async (task) => {
         console.log(`Marcando ${task.title} como completa...`)
 
@@ -21,7 +18,7 @@ function UncompletedTasks({ tasks, setReload }) {
     return ( 
         <div className="uncompleted-tasks">
             <h3>No completas</h3>
-            <ul>
+            <ul className="uncompleted-tasks-list">
                 {tasks.map((task) => (
                     <UncompletedTaskItem task={task} completeTask={markAsComplete} key={task.id} />
                 ))}
