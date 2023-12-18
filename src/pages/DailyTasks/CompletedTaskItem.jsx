@@ -2,6 +2,7 @@ function CompletedTaskItem({ task, uncompleteTask }) {
     return ( 
         <li className="task-item">
             <p>{task.title}</p>
+            <p>{task.reported_hours}h</p>
             <button onClick={() => uncompleteTask(task)}>Des-completar</button>
         </li>
      );

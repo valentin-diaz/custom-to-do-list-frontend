@@ -16,9 +16,9 @@ function UncompletedTasks({ tasks, setReload }) {
     }
     
     return ( 
-        <div className="uncompleted-tasks">
+        <div className="uncompleted-tasks task-list-container">
             <h3>No completas</h3>
-            <ul className="uncompleted-tasks-list">
+            <ul className="uncompleted-tasks-list task-list">
                 {tasks.map((task) => (
                     <UncompletedTaskItem task={task} completeTask={markAsComplete} key={task.id} />
                 ))}

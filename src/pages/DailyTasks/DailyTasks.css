@@ -7,7 +7,7 @@
     margin: 0 auto;
 }
 
-.uncompleted-tasks {
+.task-list-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,7 +16,7 @@
     /* background-color: red; */
 }
 
-.uncompleted-tasks-list {
+.task-list {
     display: flex;
     flex-direction: column;
     align-items: center;
