@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getDailyTasks } from "../../api-calls";
 import TaskList from "./TaskList";
 import "./DailyTasks.css";
+import NewTaskForm from "./NewTaskForm";
 
 function DailyTasks() {
     const [tasks, setTasks] = useState([]);
@@ -28,6 +29,7 @@ function DailyTasks() {
         <>
             <h1>Tareas para hoy</h1>
             <TaskList tasks={tasks} setReload={setReload} />
+            <NewTaskForm />
         </>
      );
 }
