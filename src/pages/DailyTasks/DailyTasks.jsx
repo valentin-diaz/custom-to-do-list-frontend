@@ -9,7 +9,9 @@ function DailyTasks() {
     const [tasks, setTasks] = useState([]);
     const [reload, setReload] = useState(0);
     const [modal, setModal] = useState(false);
+    const [modalContent, setModalContent] = useState(<></>);
 
+    // Obtener tareas desde la API
     useEffect(() => {
         const callGetTasks = async () => {
             const { data, error } = await getDailyTasks()
@@ -26,21 +28,44 @@ function DailyTasks() {
 
         callGetTasks();
     }, [reload]);
+
+    // Manejo del Modal
+    const showModal = (content) => {
+        setModalContent(content);
+        setModal(true);
+    }
+
+    useEffect(() => {
+        const keyDownHandler = event => {
+          console.log('User pressed: ', event.key);
+    
+          if (event.key === 'Escape') {
+            event.preventDefault();
+            setModal(false)
+          }
+        };
+        document.addEventListener('keydown', keyDownHandler);
+    
+        return () => {
+          document.removeEventListener('keydown', keyDownHandler);
+        };
+      }, []);
     
     return ( 
         <div className="daily-tasks-wrapper">
             <h1>Tareas para hoy</h1>
-            <button onClick={() => setModal(true)}>
-                Open modal
-            </button>
+            
+            <TaskList tasks={tasks} setReload={setReload} showModal={showModal} />
+            <NewTaskForm setReload={setReload}/>
+
             <Modal
                 openModal={modal}
-                closeModal={() => setModal(false)}
+                closeModal={() => {
+                    setModal(false)
+                }}
             >
-                Modal Content
+                {modalContent}
             </Modal>
-            <TaskList tasks={tasks} setReload={setReload} />
-            <NewTaskForm setReload={setReload}/>
         </div>
      );
 }

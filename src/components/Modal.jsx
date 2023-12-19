@@ -13,7 +13,12 @@ function Modal({ openModal, closeModal, children }) {
     return ( 
         <dialog
             ref={ref}
-            onCancel={closeModal}    
+            onCancel={closeModal}  
+            autoFocus 
+            onClick={(e) => {
+                console.log('click en el modal')
+                console.log(e)
+            }} 
         >
             {children}
             <button onClick={closeModal}>
