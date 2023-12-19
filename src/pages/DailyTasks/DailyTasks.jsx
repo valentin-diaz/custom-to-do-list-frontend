@@ -3,10 +3,12 @@ import { getDailyTasks } from "../../api-calls";
 import TaskList from "./TaskList";
 import "./DailyTasks.css";
 import NewTaskForm from "./NewTaskForm";
+import Modal from "../../components/Modal";
 
 function DailyTasks() {
     const [tasks, setTasks] = useState([]);
     const [reload, setReload] = useState(0);
+    const [modal, setModal] = useState(false);
 
     useEffect(() => {
         const callGetTasks = async () => {
@@ -28,6 +30,15 @@ function DailyTasks() {
     return ( 
         <div className="daily-tasks-wrapper">
             <h1>Tareas para hoy</h1>
+            <button onClick={() => setModal(true)}>
+                Open modal
+            </button>
+            <Modal
+                openModal={modal}
+                closeModal={() => setModal(false)}
+            >
+                Modal Content
+            </Modal>
             <TaskList tasks={tasks} setReload={setReload} />
             <NewTaskForm setReload={setReload}/>
         </div>
