@@ -73,3 +73,24 @@ export const putTaskUncomplete = async (task_id) => {
         }
     }
 }
+
+export const putTaskHours = async (task_id, hours) => {
+    console.log('PUT TASK HOURS')
+    try {
+        const response = await axios({
+            method: 'PUT',
+            url: `${BASE_URL}/tasks/${task_id}/report`,
+            data: { reportedHours: hours },
+        });
+
+        return {
+            data: response,
+            error: null
+        }
+    } catch (error) {
+        return {
+            data: null,
+            error
+        }
+    }
+}

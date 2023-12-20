@@ -35,6 +35,10 @@ function DailyTasks() {
         setModal(true);
     }
 
+    const closeModal = (content) => {
+        setModal(false);
+    }
+
     useEffect(() => {
         const keyDownHandler = event => {
         //   console.log('User pressed: ', event.key);
@@ -55,14 +59,12 @@ function DailyTasks() {
         <div className="daily-tasks-wrapper">
             <h1>Tareas para hoy</h1>
             
-            <TaskList tasks={tasks} setReload={setReload} showModal={showModal} />
+            <TaskList tasks={tasks} setReload={setReload} showModal={showModal} closeModal={closeModal}/>
             <NewTaskForm setReload={setReload}/>
 
             <Modal
                 openModal={modal}
-                closeModal={() => {
-                    setModal(false)
-                }}
+                closeModal={closeModal}
             >
                 {modalContent}
             </Modal>
