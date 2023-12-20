@@ -1,4 +1,5 @@
 import { putTaskComplete } from "../../api-calls";
+import TaskModal from "./TaskModal";
 import UncompletedTaskItem from "./UncompletedTaskItem";
 
 function UncompletedTasks({ tasks, setReload, showModal }) {
@@ -17,9 +18,7 @@ function UncompletedTasks({ tasks, setReload, showModal }) {
 
     const openHoursModal = (task) => {
         showModal(
-            <div>
-                <h1>Modal para {task.title}</h1>
-            </div>
+            <TaskModal task={task} />
         )
     }
     
