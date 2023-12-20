@@ -37,7 +37,7 @@ function DailyTasks() {
 
     useEffect(() => {
         const keyDownHandler = event => {
-          console.log('User pressed: ', event.key);
+        //   console.log('User pressed: ', event.key);
     
           if (event.key === 'Escape') {
             event.preventDefault();

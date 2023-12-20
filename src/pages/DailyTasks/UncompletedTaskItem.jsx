@@ -1,8 +1,9 @@
-function UncompletedTaskItem({ task, completeTask, openHoursModal }) {
+function UncompletedTaskItem({ task, completeTask, openTaskModal }) {
     return ( 
         <li className="task-item">
-            <p>{task.title}, {task.reported_hours}h</p>
-            <button onClick={() => openHoursModal(task)}>Reportar horas</button>
+            <p>{task.title}</p>
+            <p>{task.reported_hours}h</p>
+            <button onClick={() => openTaskModal(task)}>Ver tarea</button>
             <button onClick={() => completeTask(task)}>Completar</button>
         </li>
      );

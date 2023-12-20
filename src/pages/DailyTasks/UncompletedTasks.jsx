@@ -16,7 +16,7 @@ function UncompletedTasks({ tasks, setReload, showModal }) {
         }
     }
 
-    const openHoursModal = (task) => {
+    const openTaskModal = (task) => {
         showModal(
             <TaskModal task={task} />
         )
@@ -30,7 +30,7 @@ function UncompletedTasks({ tasks, setReload, showModal }) {
                     <UncompletedTaskItem 
                         task={task} 
                         completeTask={markAsComplete} 
-                        openHoursModal={openHoursModal} 
+                        openTaskModal={openTaskModal} 
                         key={task.id}  
                     />
                 ))}
