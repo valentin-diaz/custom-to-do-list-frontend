@@ -8,7 +8,7 @@ function TaskList({ tasks, setReload, showModal, closeModal }) {
                 tasks={tasks.filter(task => !task.is_complete)} setReload={setReload} showModal={showModal} closeModal={closeModal}
             />
             <CompletedTasks 
-                tasks={tasks.filter(task => task.is_complete)} setReload={setReload}
+                tasks={tasks.filter(task => task.is_complete)} setReload={setReload} showModal={showModal} closeModal={closeModal}
             />   
         </>
      );
