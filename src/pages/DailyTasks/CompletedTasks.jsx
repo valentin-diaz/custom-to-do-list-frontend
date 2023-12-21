@@ -1,4 +1,4 @@
-import { putTaskUncomplete, putTaskHours } from "../../api-calls";
+import { putTaskUncomplete, putTaskHours, deleteTask } from "../../api-calls";
 import TaskModal from "./TaskModal";
 import CompletedTaskItem from "./CompletedTaskItem";
 
@@ -18,12 +18,29 @@ function CompletedTasks({ tasks, setReload, showModal, closeModal }) {
 
     const openTaskModal = (task) => {
         showModal(
-            <TaskModal task={task} reportHours={reportHours}/>
+            <TaskModal 
+                task={task} 
+                reportHours={reportHours}
+                deleteTask={removeTask}
+            />
         )
     }
 
     const reportHours = async (task, hours) => {
         const { data, error } = await putTaskHours(task.id, hours);
+
+        if (data) {
+            console.log(data)
+            setReload(prev => prev + 1)
+            closeModal()
+        }
+        if (error) {
+            console.log(error)
+        }
+    }
+
+    const removeTask = async (task) => {
+        const { data, error } = await deleteTask(task.id);
 
         if (data) {
             console.log(data)
