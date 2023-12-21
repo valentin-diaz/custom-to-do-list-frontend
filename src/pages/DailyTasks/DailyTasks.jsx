@@ -35,14 +35,12 @@ function DailyTasks() {
         setModal(true);
     }
 
-    const closeModal = (content) => {
+    const closeModal = () => {
         setModal(false);
     }
 
     useEffect(() => {
         const keyDownHandler = event => {
-        //   console.log('User pressed: ', event.key);
-    
           if (event.key === 'Escape') {
             event.preventDefault();
             setModal(false)
