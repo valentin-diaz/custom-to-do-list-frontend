@@ -1,4 +1,4 @@
-import { putTaskComplete, putTaskHours } from "../../api-calls";
+import { deleteTask, putTaskComplete, putTaskHours } from "../../api-calls";
 import TaskModal from "./TaskModal";
 import UncompletedTaskItem from "./UncompletedTaskItem";
 
@@ -18,7 +18,11 @@ function UncompletedTasks({ tasks, setReload, showModal, closeModal }) {
 
     const openTaskModal = (task) => {
         showModal(
-            <TaskModal task={task} reportHours={reportHours}/>
+            <TaskModal 
+                task={task} 
+                reportHours={reportHours}
+                deleteTask={removeTask}
+            />
         )
     }
 
@@ -34,10 +38,23 @@ function UncompletedTasks({ tasks, setReload, showModal, closeModal }) {
             console.log(error)
         }
     }
+
+    const removeTask = async (task) => {
+        const { data, error } = await deleteTask(task.id);
+
+        if (data) {
+            console.log(data)
+            setReload(prev => prev + 1)
+            closeModal()
+        }
+        if (error) {
+            console.log(error)
+        }
+    }
     
     return ( 
         <div className="uncompleted-tasks task-list-container">
-            <h3>No completas</h3>
+            <h3>Pendientes</h3>
             <ul className="uncompleted-tasks-list task-list">
                 {tasks.map((task) => (
                     <UncompletedTaskItem 

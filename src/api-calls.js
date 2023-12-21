@@ -94,3 +94,23 @@ export const putTaskHours = async (task_id, hours) => {
         }
     }
 }
+
+export const deleteTask = async (task_id) => {
+    console.log('DELETE TASK')
+    try {
+        const response = await axios({
+            method: 'DELETE',
+            url: `${BASE_URL}/tasks/${task_id}`,
+        });
+
+        return {
+            data: response,
+            error: null
+        }
+    } catch (error) {
+        return {
+            data: null,
+            error
+        }
+    }
+}

@@ -1,12 +1,13 @@
 .daily-tasks-wrapper {
     /* background-color: green; */
-    width: 70%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
     padding-top: 30px;
     padding-bottom: 30px;
+    gap: 15px;
 }
 
 .task-list-container {

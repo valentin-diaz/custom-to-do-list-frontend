@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function TaskModal({ task, reportHours }) {
+function TaskModal({ task, reportHours, deleteTask }) {
     const [ hours, setHours ] = useState(0);
     
     return ( 
@@ -9,6 +9,8 @@ function TaskModal({ task, reportHours }) {
             <p>{task.reported_hours} horas invertidas</p>
             <input type="number" value={hours} onChange={(e) => setHours(e.target.value)}/>
             <button onClick={() => reportHours(task, hours)}>Reportar horas</button>
+            <br />
+            <button onClick={() => deleteTask(task)}>Eliminar tarea</button>
         </div>
      );
 }
