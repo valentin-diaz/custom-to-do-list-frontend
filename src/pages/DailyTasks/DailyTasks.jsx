@@ -4,12 +4,11 @@ import TaskList from "./TaskList";
 import "./DailyTasks.css";
 import NewTaskForm from "./NewTaskForm";
 import Modal from "../../components/Modal";
+import { ModalProvider } from "../../contexts/ModalContext";
 
 function DailyTasks() {
     const [tasks, setTasks] = useState([]);
     const [reload, setReload] = useState(0);
-    const [modal, setModal] = useState(false);
-    const [modalContent, setModalContent] = useState(<></>);
 
     // Obtener tareas desde la API
     useEffect(() => {
@@ -28,44 +27,17 @@ function DailyTasks() {
 
         callGetTasks();
     }, [reload]);
-
-    // Manejo del Modal
-    const showModal = (content) => {
-        setModalContent(content);
-        setModal(true);
-    }
-
-    const closeModal = () => {
-        setModal(false);
-    }
-
-    useEffect(() => {
-        const keyDownHandler = event => {
-          if (event.key === 'Escape') {
-            event.preventDefault();
-            setModal(false)
-          }
-        };
-        document.addEventListener('keydown', keyDownHandler);
-    
-        return () => {
-          document.removeEventListener('keydown', keyDownHandler);
-        };
-      }, []);
     
     return ( 
         <div className="daily-tasks-wrapper">
             <h1>Tareas para hoy</h1>
-            
-            <TaskList tasks={tasks} setReload={setReload} showModal={showModal} closeModal={closeModal}/>
-            <NewTaskForm setReload={setReload}/>
+            <ModalProvider>
+                <TaskList tasks={tasks} setReload={setReload} />
+                <NewTaskForm setReload={setReload}/>
 
-            <Modal
-                openModal={modal}
-                closeModal={closeModal}
-            >
-                {modalContent}
-            </Modal>
+                <Modal/>
+
+            </ModalProvider>
         </div>
      );
 }

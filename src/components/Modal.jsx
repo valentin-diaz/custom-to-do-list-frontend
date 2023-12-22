@@ -1,15 +1,17 @@
 import { useEffect, useRef } from "react";
+import { useModal } from "../contexts/ModalContext";
 
-function Modal({ openModal, closeModal, children }) {
+function Modal() {
+    const { modal, closeModal, modalContent } = useModal();
     const ref = useRef();
 
     useEffect(() => {
-        if (openModal) {
+        if (modal) {
             ref.current?.showModal();
         } else {
             ref.current?.close();
         }
-    }, [openModal]);
+    }, [modal]);
     return ( 
         <dialog
             ref={ref}
@@ -31,7 +33,7 @@ function Modal({ openModal, closeModal, children }) {
                 }
             }} 
         >
-            {children}
+            {modalContent}
             <button onClick={closeModal}>
                 Close
             </button>

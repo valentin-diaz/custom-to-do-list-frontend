@@ -1,7 +1,10 @@
+import { useModal } from "../../contexts/ModalContext";
 import CompletedTasks from "./CompletedTasks";
 import UncompletedTasks from "./UncompletedTasks";
 
-function TaskList({ tasks, setReload, showModal, closeModal }) {
+function TaskList({ tasks, setReload }) {
+    const { showModal, closeModal } = useModal();
+    
     return ( 
         <>
             <UncompletedTasks 
