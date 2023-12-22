@@ -4,14 +4,14 @@ import UncompletedTasks from "./UncompletedTasks";
 
 function TaskList({ tasks, setReload }) {
     const { showModal, closeModal } = useModal();
-    
+
     return ( 
         <>
             <UncompletedTasks 
-                tasks={tasks.filter(task => !task.is_complete)} setReload={setReload} showModal={showModal} closeModal={closeModal}
+                tasks={tasks.filter(task => !task.is_complete)} setReload={setReload}
             />
             <CompletedTasks 
-                tasks={tasks.filter(task => task.is_complete)} setReload={setReload} showModal={showModal} closeModal={closeModal}
+                tasks={tasks.filter(task => task.is_complete)} setReload={setReload}
             />   
         </>
      );

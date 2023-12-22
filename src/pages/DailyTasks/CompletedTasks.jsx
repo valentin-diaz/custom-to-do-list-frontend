@@ -1,8 +1,11 @@
 import { putTaskUncomplete, putTaskHours, deleteTask } from "../../api-calls";
 import TaskModal from "./TaskModal";
 import CompletedTaskItem from "./CompletedTaskItem";
+import { useModal } from "../../contexts/ModalContext";
 
-function CompletedTasks({ tasks, setReload, showModal, closeModal }) {
+function CompletedTasks({ tasks, setReload }) {
+    const { showModal, closeModal } = useModal();
+    
     const markAsUncomplete = async (task) => {
         console.log(`Marcando ${task.title} como incompleta...`)
 
