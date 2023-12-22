@@ -5,7 +5,9 @@ const BASE_URL = 'http://localhost:5000'
 export const getDailyTasks = async () => {
     console.log('GET DAILY TASKS')
     try {
-        const response = await axios.get(`${BASE_URL}/tasks`);
+        const date = new Date().toISOString().slice(0, 10).replace(/-/g, '')
+        console.log(date)
+        const response = await axios.get(`${BASE_URL}/tasks?date=${date}`);
 
         return {
             data: response,
