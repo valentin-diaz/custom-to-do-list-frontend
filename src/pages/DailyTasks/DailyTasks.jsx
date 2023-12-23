@@ -5,10 +5,13 @@ import "./DailyTasks.css";
 import NewTaskForm from "./NewTaskForm";
 import Modal from "../../components/Modal";
 import { ModalProvider } from "../../contexts/ModalContext";
+import { useReload } from "../../contexts/ReloadContext";
 
 function DailyTasks() {
     const [tasks, setTasks] = useState([]);
-    const [reload, setReload] = useState(0);
+    // const [reload, setReload] = useState(0);
+    const { reloadCounter, setReload } = useReload();
+
 
     // Obtener tareas desde la API
     useEffect(() => {
@@ -26,7 +29,7 @@ function DailyTasks() {
         }
 
         callGetTasks();
-    }, [reload]);
+    }, [reloadCounter]);
     
     return ( 
         <div className="daily-tasks-wrapper">

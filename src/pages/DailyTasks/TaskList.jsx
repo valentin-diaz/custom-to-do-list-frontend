@@ -1,17 +1,14 @@
-import { useModal } from "../../contexts/ModalContext";
 import CompletedTasks from "./CompletedTasks";
 import UncompletedTasks from "./UncompletedTasks";
 
-function TaskList({ tasks, setReload }) {
-    const { showModal, closeModal } = useModal();
-
+function TaskList({ tasks }) {
     return ( 
         <>
             <UncompletedTasks 
-                tasks={tasks.filter(task => !task.is_complete)} setReload={setReload}
+                tasks={tasks.filter(task => !task.is_complete)}
             />
             <CompletedTasks 
-                tasks={tasks.filter(task => task.is_complete)} setReload={setReload}
+                tasks={tasks.filter(task => task.is_complete)}
             />   
         </>
      );

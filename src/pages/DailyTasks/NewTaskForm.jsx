@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { postTask } from "../../api-calls";
+import { useReload } from "../../contexts/ReloadContext";
 
-function NewTaskForm({ setReload }) {
+function NewTaskForm() {
+    const { setReload } = useReload();
+    
     const [taskData, setTaskData] = useState({
         title: '',
         category: 'Leer'
