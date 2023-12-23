@@ -59,7 +59,7 @@ function UncompletedTasks({ tasks }) {
     
     return ( 
         <div className="uncompleted-tasks task-list-container">
-            <h3>Pendientes</h3>
+            <h3 className="daily-tasks-subtitle">Pendientes</h3>
             <ul className="uncompleted-tasks-list task-list">
                 {tasks.map((task) => (
                     <UncompletedTaskItem 

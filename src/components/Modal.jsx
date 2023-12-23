@@ -15,6 +15,7 @@ function Modal() {
     return ( 
         <dialog
             ref={ref}
+            className="shadow"
             onCancel={closeModal}  
             autoFocus 
             onClick={(e) => {

@@ -29,7 +29,7 @@ function NewTaskForm() {
     
     return ( 
         <>
-            <h2>Agregar tarea</h2>
+            <h2 className="daily-tasks-subtitle">Agregar tarea</h2>
             <form>
                 <input type="text" value={taskData.title} placeholder="Nombre..." onChange={(e) => setTaskData({...taskData, title: e.target.value})} />
                 <button type="submit" onClick={onSubmit}>Agregar</button>
