@@ -5,10 +5,12 @@ function Navbar() {
         return (
             <NavLink
                 to={path}
-                style={({ isActive }) => {
-                    return {
-                      color: isActive ? "red" : "black"
-                }}}
+                className={({ isActive }) =>
+                    [
+                        "navbar-item",
+                        isActive ? "active" : "",
+                    ].join(" ")
+                }
             >
                 {label}
             </NavLink>
@@ -17,7 +19,7 @@ function Navbar() {
     
     return ( 
         <nav id="navbar">
-            { renderNavItem('/xd', 'Reporte de horas') }
+            { renderNavItem('/xd', 'Tiempo') }
             { renderNavItem('/', 'Tareas diarias') }
             { renderNavItem('/calendar', 'Calendario') }
         </nav>

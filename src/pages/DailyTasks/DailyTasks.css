@@ -1,12 +1,10 @@
 .daily-tasks-wrapper {
-    /* background-color: green; */
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    /* margin-top: 80px; */
-    padding-top: 50px;
+    padding-top: 15px;
     padding-bottom: 30px;
     gap: 30px;
     /* background-color: var(--light-2); */
