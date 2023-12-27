@@ -33,6 +33,14 @@ function NewTaskForm() {
             <form>
                 <input type="text" value={taskData.title} placeholder="Nombre..." onChange={(e) => setTaskData({...taskData, title: e.target.value})} />
                 <button type="submit" onClick={onSubmit}>Agregar</button>
+                <label htmlFor="category">Categoría</label>
+                <select name="category" id="category-select" value={taskData.category} onChange={e => setTaskData({...taskData, category: e.target.value})}>
+                    <option value="Literatura">Literatura</option>
+                    <option value="Cine">Cine</option>
+                    <option value="Videojuegos">Videojuegos</option>
+                    <option value="Música">Música</option>
+                    <option value="Carrera">Carrera</option>
+                </select>
             </form>
         </>
      );
