@@ -11,6 +11,8 @@ function TaskModal({ task, reportHours, deleteTask }) {
     return ( 
         <div className="task-modal">
             <h1>{task.title}</h1>
+            <p>({task.category})</p>
+            <br />
             <p>{task.reported_hours} horas invertidas</p>
             <form >
                 <input type="number" value={hours} onChange={(e) => setHours(e.target.value)}/>
