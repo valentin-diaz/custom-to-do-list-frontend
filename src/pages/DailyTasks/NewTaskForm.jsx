@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { postTask } from "../../api-calls";
+import { useEffect, useState } from "react";
+import { getCategories, postTask } from "../../api-calls";
 import { useReload } from "../../contexts/ReloadContext";
 
 function NewTaskForm() {
@@ -8,7 +8,26 @@ function NewTaskForm() {
     const [taskData, setTaskData] = useState({
         title: '',
         category: 'Leer'
-    })
+    });
+    const [categories, setCategories] = useState([]);
+    
+    useEffect(() => {
+        const getTaskCategories = async () => {
+            const { data, error } = await getCategories();
+
+            if (data) {
+                console.log('Categorias obtenidas')
+                console.log(data.data)
+                setCategories(data.data);
+            }
+
+            if (error) {
+                console.log(error)
+            }
+        }    
+
+        getTaskCategories()
+    }, []);
     
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -35,11 +54,9 @@ function NewTaskForm() {
                 <button type="submit" onClick={onSubmit}>Agregar</button>
                 <label htmlFor="category">Categoría</label>
                 <select name="category" id="category-select" value={taskData.category} onChange={e => setTaskData({...taskData, category: e.target.value})}>
-                    <option value="Literatura">Literatura</option>
-                    <option value="Cine">Cine</option>
-                    <option value="Videojuegos">Videojuegos</option>
-                    <option value="Música">Música</option>
-                    <option value="Carrera">Carrera</option>
+                    {categories.map((c, idx) => (
+                        <option value={c} key={idx}>{c}</option>
+                    ))}
                 </select>
             </form>
         </>

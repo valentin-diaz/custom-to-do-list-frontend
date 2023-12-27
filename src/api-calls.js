@@ -21,6 +21,26 @@ export const getDailyTasks = async () => {
     }
 }
 
+export const getCategories = async () => {
+    console.log('GET CATEGORIES')
+    try {
+        const response = await axios({
+            method: 'GET',
+            url: `${BASE_URL}/categories`
+        });
+
+        return {
+            data: response,
+            error: null
+        }
+    } catch (error) {
+        return {
+            data: null,
+            error
+        }
+    }
+}
+
 export const postTask = async (title, category) => {
     console.log('POST TASK')
     try {
