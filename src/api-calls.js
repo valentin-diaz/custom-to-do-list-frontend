@@ -46,7 +46,7 @@ export const postTask = async (title, category) => {
     try {
         const response = await axios({
             method: 'POST',
-            url: `${BASE_URL}/task`,
+            url: `${BASE_URL}/tasks`,
             data: { title, category},
         });
 
