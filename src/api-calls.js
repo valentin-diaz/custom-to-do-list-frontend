@@ -136,3 +136,23 @@ export const deleteTask = async (task_id) => {
         }
     }
 }
+
+export const getDashboard = async () => {
+    console.log('GET DASHBOARD DATA')
+    try {
+        const response = await axios({
+            method: 'GET',
+            url: `${BASE_URL}/dashboard`,
+        });
+
+        return {
+            data: response,
+            error: null
+        }
+    } catch (error) {
+        return {
+            data: null,
+            error
+        }
+    }
+}

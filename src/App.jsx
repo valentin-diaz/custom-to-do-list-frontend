@@ -3,6 +3,7 @@ import DailyTasks from "./pages/DailyTasks/DailyTasks";
 import Calendar from "./pages/Calendar/Calendar";
 import { ReloadProvider } from "./contexts/ReloadContext";
 import Navbar from "./components/Navbar";
+import Time from "./pages/Time/Time";
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<DailyTasks />}/>
           <Route path="/calendar" element={<Calendar />}/>
+          <Route path="/time" element={<Time />}/>
         </Routes>
       </ReloadProvider>
     </>

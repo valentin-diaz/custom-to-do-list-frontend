@@ -19,9 +19,9 @@ function Navbar() {
     
     return ( 
         <nav id="navbar">
-            { renderNavItem('/xd', 'Tiempo') }
+            { renderNavItem('/calendar', 'Calendario') } 
             { renderNavItem('/', 'Tareas diarias') }
-            { renderNavItem('/calendar', 'Calendario') }
+            { renderNavItem('/time', 'Tiempo') }
         </nav>
      );
 }

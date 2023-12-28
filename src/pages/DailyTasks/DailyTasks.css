@@ -8,14 +8,15 @@
     padding-bottom: 30px;
 }
 
-.daily-tasks-title, .daily-tasks-subtitle {
+.daily-tasks-subtitle {
     width: 50%;
 }
 
 .daily-tasks-title {
     font-size: xx-large;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 15px;
+    margin-top: 20px;
 }
 
 .daily-tasks-subtitle {
