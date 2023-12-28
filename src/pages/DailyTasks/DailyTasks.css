@@ -6,8 +6,6 @@
     margin: 0 auto;
     padding-top: 15px;
     padding-bottom: 30px;
-    /* gap: 30px; */
-    /* background-color: var(--light-2); */
 }
 
 .daily-tasks-title, .daily-tasks-subtitle {
@@ -26,7 +24,6 @@
     border-bottom: 1px solid #bbb;
     padding-bottom: 2px;
     margin-bottom: 8px;
-    /* text-transform: uppercase; */
 }
 
 .task-list-container {
@@ -36,7 +33,6 @@
     justify-content: center;
     width: 100%;
     margin-bottom: 2em;
-    /* background-color: red; */
 }
 
 .task-list {
@@ -45,7 +41,6 @@
     align-items: center;
     width: 100%;
     gap: 15px;
-    /* background-color: green; */
     z-index: 1;
 }
 
@@ -59,7 +54,6 @@
     padding: 6px 10px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     border-radius: 2px;
-    /* border-left: 4px solid green; */
 }
 
 .task-item:hover {
