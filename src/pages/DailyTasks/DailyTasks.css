@@ -6,7 +6,7 @@
     margin: 0 auto;
     padding-top: 15px;
     padding-bottom: 30px;
-    gap: 30px;
+    /* gap: 30px; */
     /* background-color: var(--light-2); */
 }
 
@@ -17,6 +17,7 @@
 .daily-tasks-title {
     font-size: xx-large;
     font-weight: 600;
+    margin-bottom: 15px;
 }
 
 .daily-tasks-subtitle {
@@ -34,6 +35,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-bottom: 2em;
     /* background-color: red; */
 }
 
@@ -58,6 +60,10 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     border-radius: 2px;
     /* border-left: 4px solid green; */
+}
+
+.task-item:hover {
+    cursor: pointer;
 }
 
 .task-item > * {

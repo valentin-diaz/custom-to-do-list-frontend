@@ -1,10 +1,24 @@
 function UncompletedTaskItem({ task, completeTask, openTaskModal }) {
     return ( 
-        <li className="task-item">
+        <li className="task-item" onClick={(e) => {
+            e.stopPropagation()    
+            openTaskModal(task)    
+        }}>
             <p>{task.title}</p>
             <p>{task.reported_hours}h</p>
-            <button onClick={() => openTaskModal(task)}>Ver tarea</button>
-            <button onClick={() => completeTask(task)}>Completar</button>
+
+            <button onClick={(e) => {
+                openTaskModal(task)}}
+            >
+                Ver tarea
+            </button>
+            
+            <button onClick={(e) => {
+                e.stopPropagation()
+                completeTask(task)
+            }}>
+                Completar
+            </button>
         </li>
      );
 }

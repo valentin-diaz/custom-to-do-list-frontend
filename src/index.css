@@ -63,12 +63,12 @@ body {
 }
 
 .navbar-item.active {
-  border-bottom: 4px solid var(--dark-1);
+  border-bottom: 4px solid var(--dark-2);
 }
 
 .navbar-item:hover {
-  background-color: var(--dark-1);
-  color: white;
+  /* background-color: var(--dark-1); */
+  color: var(--dark-2);
 }
 
 #root {
