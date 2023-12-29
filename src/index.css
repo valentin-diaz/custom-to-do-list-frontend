@@ -48,7 +48,7 @@ body {
   /* background-color: var(--light-2); */
   display: flex;
   justify-content: center;
-  padding: 0 550px;
+  padding: 0 35vw;
 }
 
 .navbar-item {
@@ -56,6 +56,7 @@ body {
   flex: 1;
   display: flex;
   place-content: center;
+  text-align: center;
   padding: 15px 0;
   color: #000;
   text-decoration: none;
@@ -100,5 +101,13 @@ dialog::backdrop {
 .title {
   font-size: xx-large;
   font-weight: 700;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
+}
+
+input {
+  font-family: inherit;
+}
+
+.hidden {
+  display: none;
 }

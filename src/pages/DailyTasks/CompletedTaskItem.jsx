@@ -8,13 +8,6 @@ function CompletedTaskItem({ task, uncompleteTask, openTaskModal }) {
             <p>{task.reported_hours}h</p>
 
             <button onClick={(e) => {
-                e.stopPropagation()
-                openTaskModal(task)
-            }}>
-                Ver tarea
-            </button>
-
-            <button onClick={(e) => {
                 e.stopPropagation();
                 uncompleteTask(task)
             }}>

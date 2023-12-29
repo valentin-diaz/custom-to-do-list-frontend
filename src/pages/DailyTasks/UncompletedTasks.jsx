@@ -26,6 +26,7 @@ function UncompletedTasks({ tasks }) {
             <TaskModal 
                 task={task} 
                 reportHours={reportHours}
+                updateTitle={updateTitle}
                 deleteTask={removeTask}
             />
         )
@@ -42,6 +43,10 @@ function UncompletedTasks({ tasks }) {
         if (error) {
             console.log(error)
         }
+    }
+
+    const updateTitle = async (task, new_name) => {
+        console.log('cambiando el titulo de la tarea')
     }
 
     const removeTask = async (task) => {

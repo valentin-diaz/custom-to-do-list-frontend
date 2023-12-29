@@ -16,7 +16,7 @@
     font-size: xx-large;
     font-weight: 700;
     margin-bottom: 15px;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 .daily-tasks-subtitle {
@@ -66,3 +66,9 @@
     flex-shrink: 0;
     flex-basis: 0;
 }
+
+.task-title-input {
+    border: none;
+    width: 100%;
+    margin-bottom: 0;
+} 
