@@ -117,6 +117,27 @@ export const putTaskHours = async (task_id, hours) => {
     }
 }
 
+export const putTaskTitle = async (task_id, new_name) => {
+    console.log('PUT TASK TITLE')
+    try {
+        const response = await axios({
+            method: 'PUT',
+            url: `${BASE_URL}/tasks/${task_id}/title`,
+            data: { new_name },
+        });
+
+        return {
+            data: response,
+            error: null
+        }
+    } catch (error) {
+        return {
+            data: null,
+            error
+        }
+    }
+}
+
 export const deleteTask = async (task_id) => {
     console.log('DELETE TASK')
     try {

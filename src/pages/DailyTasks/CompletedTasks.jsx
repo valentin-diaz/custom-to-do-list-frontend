@@ -1,4 +1,4 @@
-import { putTaskUncomplete, putTaskHours, deleteTask } from "../../api-calls";
+import { putTaskUncomplete, putTaskHours, deleteTask, putTaskTitle } from "../../api-calls";
 import TaskModal from "./TaskModal";
 import CompletedTaskItem from "./CompletedTaskItem";
 import { useModal } from "../../contexts/ModalContext";
@@ -47,6 +47,15 @@ function CompletedTasks({ tasks }) {
 
     const updateTitle = async (task, new_name) => {
         console.log('cambiando el titulo de la tarea')
+        const { data, error } = await putTaskTitle(task.id, new_name);
+
+        if (data) {
+            console.log(data.data)
+            setReload(prev => prev + 1)
+        }
+        if (error) {
+            console.log(error)
+        }
     }
 
     const removeTask = async (task) => {
