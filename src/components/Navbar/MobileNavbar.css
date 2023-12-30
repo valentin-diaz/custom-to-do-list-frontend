@@ -1,26 +1,27 @@
 .mobile-navbar-wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 10px 30px;
+    align-items: stretch;
+    /* padding: 10px 0px; */
+    height: 65px;
     background-color: var(--dark-2);
     color: white;
-    /* display: none; */
-    /* background-color: aqua; */
-}
-
-.mobile-navbar {
-    display: flex;
-    justify-content: center;
-    width: 30%;
 }
 
 
 .mobile-navbar-logo {
-    height: 100%;
+    /* background-color: red; */
+    padding: 0 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.mobile-navbar-button {
+    /* background-color: red; */
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
 }
   
 .navbar-item {

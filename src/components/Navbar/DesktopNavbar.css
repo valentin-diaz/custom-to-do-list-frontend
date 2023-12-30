@@ -9,7 +9,10 @@
 .desktop-navbar {
     display: flex;
     justify-content: center;
-    width: 30%;
+    /* min-width: 600px; */
+    /* max-width: 70vw; */
+    width: clamp(300px, 500px, 50vw);
+    /* background-color: red; */
 }
 
 

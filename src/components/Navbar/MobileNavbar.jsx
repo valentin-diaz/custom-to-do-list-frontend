@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./MobileNavbar.css"
+import { FaBars } from "react-icons/fa"
 
 function MobileNavbar() {
     const renderNavItem = (path, label) => {
@@ -21,7 +22,9 @@ function MobileNavbar() {
     return ( 
         <div className="mobile-navbar-wrapper">
             <h1 className="mobile-navbar-logo">Logo</h1>
-            <h2>icono</h2>
+            <div className="mobile-navbar-button">
+                <FaBars size={30}/>
+            </div>
         </div>
      );
 }
