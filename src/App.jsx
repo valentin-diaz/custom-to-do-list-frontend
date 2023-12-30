@@ -2,7 +2,7 @@ import { Routes, Route, NavLink } from "react-router-dom";
 import DailyTasks from "./pages/DailyTasks/DailyTasks";
 import Calendar from "./pages/Calendar/Calendar";
 import { ReloadProvider } from "./contexts/ReloadContext";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import Time from "./pages/Time/Time";
 
 function App() {
