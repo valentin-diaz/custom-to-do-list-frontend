@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import "./DesktopNavbar.css"
+import "./MobileNavbar.css"
 
-function Navbar() {
+function MobileNavbar() {
     const renderNavItem = (path, label) => {
         return (
             <NavLink
@@ -19,15 +19,11 @@ function Navbar() {
     }
     
     return ( 
-        <div className="desktop-navbar-wrapper">
-            <h1 className="desktop-navbar-logo">Logo</h1>
-            <nav className="desktop-navbar">
-                { renderNavItem('/calendar', 'Calendario') } 
-                { renderNavItem('/', 'Tareas diarias') }
-                { renderNavItem('/time', 'Tiempo') }
-            </nav>
+        <div className="mobile-navbar-wrapper">
+            <h1 className="mobile-navbar-logo">Logo</h1>
+            <h2>icono</h2>
         </div>
      );
 }
 
-export default Navbar;
+export default MobileNavbar;

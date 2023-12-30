@@ -4,6 +4,7 @@ import Calendar from "./pages/Calendar/Calendar";
 import { ReloadProvider } from "./contexts/ReloadContext";
 import Navbar from "./components/Navbar/Navbar";
 import Time from "./pages/Time/Time";
+import MobileNavbar from "./components/Navbar/MobileNavbar";
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
     <>
       <ReloadProvider>
         <Navbar />
+        <MobileNavbar />
         
         <Routes>
           <Route path="/" element={<DailyTasks />}/>
