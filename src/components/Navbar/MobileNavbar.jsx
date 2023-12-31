@@ -14,6 +14,7 @@ const HamburgerMenu = ({ visible, setVisible }) => {
                         isActive ? "active" : "",
                     ].join(" ")
                 }
+                onClick={() => setVisible(false)}
             >
                 {label}
             </NavLink>
