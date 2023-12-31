@@ -3,9 +3,12 @@
     justify-content: space-between;
     align-items: stretch;
     /* padding: 10px 0px; */
+    position: relative;
     height: 65px;
     background-color: var(--dark-2);
     color: white;
+    z-index: 10;
+    border-bottom: 1px solid white;
 }
 
 
@@ -23,26 +26,50 @@
     display: flex;
     align-items: center;
 }
+
+.mobile-navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: white; */
+    margin-top: 90px;
+}
   
-.navbar-item {
+.hamburger-menu {
+    background-color: var(--dark-2);
+    /* height: 100%; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 9;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    display: none;
+}
+
+.hamburger-menu.visible {
+    display: flex;
+}
+
+.mobile-navbar-item {
     /* background-color: white; */
     flex: 1;
     display: flex;
     place-content: center;
     text-align: center;
     padding: 15px 0;
-    color: #000;
+    color: white;
     text-decoration: none;
     transition: color 150ms ease, background-color 150ms ease;
 }
 
-.navbar-item.active {
-    border-bottom: 4px solid var(--dark-2);
-}
-
-.navbar-item:hover {
-    /* background-color: var(--dark-1); */
-    color: var(--dark-2);
+.mobile-navbar-item.active {
+    color: white;
 }
 
 @media only screen and (min-width: 601px) {
