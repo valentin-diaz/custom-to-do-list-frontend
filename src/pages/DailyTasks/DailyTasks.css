@@ -87,11 +87,11 @@
 }
 
 .complete-task-button {
-    height: 30px;
-    width: 30px;
+    height: 26px;
+    width: 26px;
     border-radius: 50%;
-    border: 1px solid #717171;
-    color: #717171;
+    border: 2px solid #63636361;
+    color: #636363af;
     background-color: white;
     transition: border-color 0.12s ease-out;
     display: flex;

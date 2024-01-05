@@ -7,7 +7,7 @@ function NewTaskForm() {
     
     const [taskData, setTaskData] = useState({
         title: '',
-        category: 'Leer'
+        category: ''
     });
     const [categories, setCategories] = useState([]);
     
@@ -19,6 +19,7 @@ function NewTaskForm() {
                 console.log('Categorias obtenidas')
                 console.log(data.data)
                 setCategories(data.data);
+                setTaskData({...taskData, category: data.data[0]})
             }
 
             if (error) {
