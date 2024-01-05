@@ -7,12 +7,14 @@ function UncompletedTaskItem({ task, completeTask, openTaskModal }) {
             <p>{task.title}</p>
             <p>{task.reported_hours}h</p>
             
-            <button onClick={(e) => {
-                e.stopPropagation()
-                completeTask(task)
-            }}>
-                Completar
-            </button>
+            <div className="button-container">
+                <button className="complete-task-button" onClick={(e) => {
+                    e.stopPropagation()
+                    completeTask(task)
+                }}>
+                    
+                </button>
+            </div>
         </li>
      );
 }
