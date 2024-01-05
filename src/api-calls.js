@@ -1,7 +1,6 @@
 import axios from "axios";
 
-// const BASE_URL = 'http://localhost:5000'
-const BASE_URL = 'https://to-do-list-api-w1pj.onrender.com';
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 export const getDailyTasks = async () => {
     console.log('GET DAILY TASKS')
