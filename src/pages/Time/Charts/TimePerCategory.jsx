@@ -26,6 +26,7 @@ ChartJS.register(
 
 export const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: 'top',
@@ -53,8 +54,10 @@ function TimePerCategory({ labels, values }) {
     }
     
     return ( 
-        <div className='chart-container shadow'>
-            <Bar options={options} data={data} /> 
+        <div className='chart-container time-per-category-plot shadow'>
+            <div className="chart-padding">
+                <Bar options={options} data={data}/> 
+            </div>
         </div>
     );
 }

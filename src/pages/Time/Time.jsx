@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./Time.css"
 import { getDashboard } from "../../api-calls";
 import TimePerCategory from "./Charts/TimePerCategory";
+import TasksPerCategory from "./Charts/TasksPerCategory";
 
 function Time() {
     const [dashboardData, setDashboardData] = useState({})
@@ -36,6 +37,8 @@ function Time() {
             <h1 className="title">Tiempo</h1>
             <div className="dashboard">
                 <TimePerCategory labels={dashboardData.timePerCategoryPlot.map((i) => i.category)} values={dashboardData.timePerCategoryPlot.map((i) => i.sum)}/>
+                <TasksPerCategory labels={dashboardData.tasksPerCategoryPlot.map((i) => i.category)} values={dashboardData.tasksPerCategoryPlot.map((i) => i.count)} />
+                {/* <TasksPerCategory labels={dashboardData.tasksPerCategoryPlot.map((i) => i.category)} values={dashboardData.tasksPerCategoryPlot.map((i) => i.count)} /> */}
                 {/* <TimePerCategory labels={dashboardData.timePerCategoryPlot.map((i) => i.category)} values={dashboardData.timePerCategoryPlot.map((i) => i.sum)}/> */}
                 <div>hola</div>
                 <div>hola</div>

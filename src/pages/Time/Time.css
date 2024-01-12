@@ -24,9 +24,18 @@
 
 .chart-container {
     background-color: white;
-    padding: 20px 0;
+    /* padding: 20px 0; */
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.chart-padding {
+    width: 90%;
+    height: 90%;
+}
+
+.time-per-category-plot, .tasks-per-category-plot {
+    min-height: 50vh;
 }
