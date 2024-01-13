@@ -1,5 +1,5 @@
 .time-wrapper {
-    width: 95%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,7 +13,7 @@
     margin-top: 20px;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 25px;
 }
 
@@ -27,8 +27,22 @@
     /* padding: 20px 0; */
     border-radius: 10px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex: 1;
+}
+
+.data-container {
+    padding: 24px 10px;
+    text-align: center;
+    justify-content: start;
+    gap: 10px;
+    flex: 1 0 0;
+}
+
+.data-container h1 {
+    font-size: xx-large;
 }
 
 .chart-padding {
@@ -37,5 +51,13 @@
 }
 
 .time-per-category-plot, .tasks-per-category-plot {
-    min-height: 50vh;
+    min-height: 40vh;
+}
+
+.time-per-category-plot {
+    grid-column: 1 / span 2;
+}
+
+.tasks-per-category-plot {
+    grid-column: 3 / span 4;
 }

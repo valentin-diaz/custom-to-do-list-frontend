@@ -39,9 +39,10 @@ function TasksPerCategory({ labels, values }) {
                     '#E26EE5',
                     '#F6ECA9',
                     '#9AD0C2',
-                    '#E6B9DE',
+                    '#FF9843',
                     '#96EFFF',
-                    '#ECF4D6'
+                    '#ECF4D6',
+                    '#E6B9DE'
                 ]
             }
         ]
