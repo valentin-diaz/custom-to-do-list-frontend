@@ -34,15 +34,20 @@
 }
 
 .data-container {
-    padding: 24px 10px;
+    padding: 30px 10px;
     text-align: center;
-    justify-content: start;
+    justify-content: space-between;
+    align-items: stretch;
     gap: 10px;
     flex: 1 0 0;
 }
 
 .data-container h1 {
-    font-size: xx-large;
+    font-size: 50px;
+}
+
+.data-container h4 {
+    font-size: 18px;
 }
 
 .chart-padding {
@@ -51,13 +56,17 @@
 }
 
 .time-per-category-plot, .tasks-per-category-plot {
-    min-height: 40vh;
+    min-height: 35vh;
+}
+
+.daily-task-count-plot {
+    min-height: 30vh;
 }
 
 .time-per-category-plot {
     grid-column: 1 / span 2;
 }
 
-.tasks-per-category-plot {
+.tasks-per-category-plot, .daily-task-count-plot {
     grid-column: 3 / span 4;
 }

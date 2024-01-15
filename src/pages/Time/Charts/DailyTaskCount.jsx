@@ -2,13 +2,17 @@ import {
     Chart as ChartJS,
     CategoryScale,
     LinearScale,
-    BarElement,
+    PointElement,
+    TimeScale,
+    LineElement,
     Title,
     Tooltip,
     Legend,
-} from 'chart.js';
+  } from 'chart.js';
 
-import { Bar } from 'react-chartjs-2';
+import 'chartjs-adapter-date-fns';
+
+import { Line } from 'react-chartjs-2';
 
 import { defaults } from 'chart.js';
 
@@ -18,15 +22,22 @@ defaults.color = '#000000'
 ChartJS.register(
     CategoryScale,
     LinearScale,
-    BarElement,
+    TimeScale,
+    PointElement,
+    LineElement,
     Title,
     Tooltip,
     Legend
-);
+  );
 
 export const options = {
     responsive: true,
     maintainAspectRatio: false,
+    scales: {
+        x: {
+            type: 'time',
+        }
+    },
     plugins: {
       legend: {
         position: 'top',
@@ -54,9 +65,9 @@ function DailyTaskCount({ labels, values }) {
     }
     
     return ( 
-        <div className='chart-container time-per-category-plot shadow'>
+        <div className='chart-container daily-task-count-plot shadow'>
             <div className="chart-padding">
-                <Bar options={options} data={data}/> 
+                <Line options={options} data={data}/> 
             </div>
         </div>
     );

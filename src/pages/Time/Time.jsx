@@ -44,9 +44,6 @@ function Time() {
                 <DaysWithTaskCreated />
                 <TaskCompletion />
                 <DailyTaskCount labels={dashboardData.dailyTaskCountPlot.map((i) => i.createdat.split('T')[0])} values={dashboardData.dailyTaskCountPlot.map((i) => i.count)} />
-                <div>hola</div>
-                <div>hola</div>
-                <div>hola</div>
             </div>
             
         </div>
