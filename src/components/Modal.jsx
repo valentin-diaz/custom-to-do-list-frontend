@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useModal } from "../contexts/ModalContext";
+import { IoIosClose } from "react-icons/io";
 
 function Modal() {
     const { modal, closeModal, modalContent } = useModal();
@@ -39,8 +40,8 @@ function Modal() {
             }} 
         >
             {modalContent}
-            <button onClick={closeModal} ref={closeRef}>
-                Close
+            <button className="close-modal-button" onClick={closeModal} ref={closeRef}>
+                <IoIosClose size={32}/>
             </button>
         </dialog>
      );

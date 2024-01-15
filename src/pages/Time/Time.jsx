@@ -31,7 +31,7 @@ function Time() {
 
     if (isLoading) {
         return (
-            <h1>Cargando...</h1>
+            <h1 style={{width: '100%', textAlign: 'center'}}>Cargando...</h1>
         )
     }
     

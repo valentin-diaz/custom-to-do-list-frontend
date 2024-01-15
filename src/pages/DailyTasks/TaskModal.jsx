@@ -39,12 +39,16 @@ function TaskModal({ task, reportHours, updateTitle, deleteTask }) {
     
             <p>({task.category})</p>
             <br />
-            <p>{task.reported_hours} horas invertidas</p>
-            <form >
-                <input type="number" value={editableData.hours} onChange={(e) => setEditableData({...editableData, hours: e.target.value})}/>
+            <p>Horas invertidas</p>
+            <form className="report-hours-form">
+                <div className="input-container">
+                    <input type="number" value={editableData.hours} onChange={(e) => setEditableData({...editableData, hours: e.target.value})}/>
+                </div>
                 <button type="submit" onClick={onSubmitHours}>Reportar horas</button>
             </form>
-            <button onClick={() => deleteTask(task)}>Eliminar tarea</button>
+            <div className="delete-task-container">
+                <button className="btn delete-task-button" onClick={() => deleteTask(task)}>Eliminar tarea</button>
+            </div>
         </div>
      );
 }
