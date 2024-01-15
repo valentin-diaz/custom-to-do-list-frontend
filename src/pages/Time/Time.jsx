@@ -39,10 +39,23 @@ function Time() {
         <div className="time-wrapper">
             <h1 className="title">Tiempo</h1>
             <div className="dashboard">
-                <TimePerCategory labels={dashboardData.timePerCategoryPlot.map((i) => i.category)} values={dashboardData.timePerCategoryPlot.map((i) => i.sum)}/>
-                <TasksPerCategory labels={dashboardData.tasksPerCategoryPlot.map((i) => i.category)} values={dashboardData.tasksPerCategoryPlot.map((i) => i.count)} />
-                <DaysWithTaskCreated />
-                <TaskCompletion />
+                <TimePerCategory 
+                    labels={dashboardData.timePerCategoryPlot.map((i) => i.category)} 
+                    values={dashboardData.timePerCategoryPlot.map((i) => i.sum)}
+                />
+                <TasksPerCategory 
+                    labels={dashboardData.tasksPerCategoryPlot.map((i) => i.category)} 
+                    values={dashboardData.tasksPerCategoryPlot.map((i) => i.count)} 
+                />
+                <DaysWithTaskCreated 
+                    dayRange={dashboardData.daysWithTaskCreatedPlot.dayRange} 
+                    category={dashboardData.daysWithTaskCreatedPlot.category}
+                    daysWithTaskCreated={dashboardData.daysWithTaskCreatedPlot.daysWithTaskCreated}
+                />
+                <TaskCompletion 
+                    completedTasks={dashboardData.taskCompletionPlot.completedTasks}
+                    totalTasks={dashboardData.taskCompletionPlot.totalTasks}
+                />
                 <DailyTaskCount labels={dashboardData.dailyTaskCountPlot.map((i) => i.createdat.split('T')[0])} values={dashboardData.dailyTaskCountPlot.map((i) => i.count)} />
             </div>
             
