@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const BASE_URL = import.meta.env.VITE_API_URL;
+console.log(`La url es ${BASE_URL}`)
 
 export const getDailyTasks = async () => {
     console.log('GET DAILY TASKS')
