@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
-import { useModal } from "../contexts/ModalContext";
+import { useModal } from "../../contexts/ModalContext";
 import { IoIosClose } from "react-icons/io";
+import "./Modal.css";
 
 function Modal() {
     const { modal, closeModal, modalContent } = useModal();
@@ -24,7 +25,7 @@ function Modal() {
     return ( 
         <dialog
             ref={ref}
-            className="shadow"
+            className="modal shadow"
             onCancel={closeModal}  
             autoFocus 
             onClick={(e) => {

@@ -50,15 +50,42 @@ function NewTaskForm() {
     return ( 
         <>
             <h2 className="daily-tasks-subtitle">Agregar tarea</h2>
-            <form>
-                <input type="text" value={taskData.title} placeholder="Nombre..." onChange={(e) => setTaskData({...taskData, title: e.target.value})} />
-                <button type="submit" onClick={onSubmit}>Agregar</button>
-                <label htmlFor="category">Categoría</label>
-                <select name="category" id="category-select" value={taskData.category} onChange={e => setTaskData({...taskData, category: e.target.value})}>
+            <form className="new-task-form">
+                <label htmlFor="title" className="form-label">
+                    Nombre:
+                </label>
+                <input 
+                    type="text" 
+                    name="title"
+                    value={taskData.title} 
+                    placeholder="Nombre..." 
+                    onChange={(e) => setTaskData({...taskData, title: e.target.value})} 
+                    className="no-outline form-input"
+                />
+                
+
+                <label htmlFor="category" className="form-label">
+                    Categoría:
+                </label>
+                <select 
+                    name="category" 
+                    className="form-input"
+                    id="category-select" 
+                    value={taskData.category} 
+                    onChange={e => setTaskData({...taskData, category: e.target.value})}
+                >
                     {categories.map((c, idx) => (
                         <option value={c} key={idx}>{c}</option>
                     ))}
                 </select>
+
+                <button 
+                    type="submit" 
+                    onClick={onSubmit} 
+                    className="btn btn-primary"
+                >
+                    Agregar
+                </button>
             </form>
         </>
      );

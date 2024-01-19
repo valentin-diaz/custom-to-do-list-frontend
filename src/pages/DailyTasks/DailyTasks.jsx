@@ -3,7 +3,7 @@ import { getDailyTasks } from "../../api-calls";
 import TaskList from "./TaskList";
 import "./DailyTasks.css";
 import NewTaskForm from "./NewTaskForm";
-import Modal from "../../components/Modal";
+import Modal from "../../components/Modal/Modal";
 import { ModalProvider } from "../../contexts/ModalContext";
 import { useReload } from "../../contexts/ReloadContext";
 

@@ -81,6 +81,17 @@
     margin-bottom: 0;
 } 
 
+.new-task-form {
+    column-gap: 1em;
+    row-gap: 0.5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.new-task-form button {
+    grid-column: 1 / span 2;
+}
+
 .button-container {
     display: flex;
     justify-content: flex-end;
@@ -124,11 +135,7 @@
 }
 
 .report-hours-form input {
-    font-size: 1em;
     max-width: 100px;
-    padding: 3px 6px;
-    border: 1px solid #63636361;
-    border-radius: 3px;
 }
 
 .report-hours-form input:focus {
